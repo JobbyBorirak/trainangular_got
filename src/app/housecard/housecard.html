@@ -1,0 +1,47 @@
+<article class="house-card">
+  <!-- Top royal decorative bar -->
+  <div class="card-banner"></div>
+
+  <div class="card-content">
+    <!-- Header with Crest & Region Badge -->
+    <div class="card-header">
+      <div class="crest-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="M12 7v10"/>
+          <path d="M9 11h6"/>
+        </svg>
+      </div>
+
+      <span class="region-badge" [class.unspecified]="!house().region">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" class="pin-icon" aria-hidden="true">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+        </svg>
+        {{ house().region || 'ไม่ระบุเขต' }}
+      </span>
+    </div>
+
+    <!-- House Title -->
+    <h3 class="house-name" [title]="house().name">
+      {{ house().name }}
+    </h3>
+
+    <!-- Coat of Arms / Sigil Section -->
+    <div class="sigil-section">
+      <div class="sigil-header">
+        <span class="sigil-label">ตราประจำตระกูล</span>
+      </div>
+      <div class="sigil-body">
+        <p class="sigil-text" [class.empty]="!house().coatOfArms">
+          {{ house().coatOfArms || 'ไม่มีข้อมูลตราประจำตระกูล' }}
+        </p>
+      </div>
+    </div>
+
+    <!-- Footer meta -->
+    <div class="card-footer">
+      <div class="footer-divider"></div>
+      <span class="footer-tag">A Song of Ice and Fire</span>
+    </div>
+  </div>
+</article>

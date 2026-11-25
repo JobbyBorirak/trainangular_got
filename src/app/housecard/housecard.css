@@ -1,0 +1,178 @@
+:host {
+    display: block;
+    height: 100%;
+}
+
+.house-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e7ded0;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.03);
+    overflow: hidden;
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.28s ease;
+}
+
+.house-card:hover {
+    transform: translateY(-5px);
+    border-color: #d4af37;
+    box-shadow: 0 14px 28px -4px rgba(180, 83, 9, 0.15), 0 6px 12px -2px rgba(15, 23, 42, 0.04);
+}
+
+/* Respect reduced-motion preferences for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .house-card {
+        transition: none;
+    }
+
+    .house-card:hover {
+        transform: none;
+    }
+}
+
+/* Regal top accent line */
+.card-banner {
+    height: 6px;
+    width: 100%;
+    background: linear-gradient(90deg, #991b1b 0%, #b45309 50%, #d97706 100%);
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 20px;
+}
+
+/* Header */
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.crest-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    color: #92400e;
+    box-shadow: inset 0 0 0 1px rgba(217, 119, 6, 0.25);
+    flex-shrink: 0;
+}
+
+.region-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #1e293b;
+    background-color: #f1f5f9;
+    border-radius: 9999px;
+    border: 1px solid #e2e8f0;
+    max-width: 60%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.region-badge.unspecified {
+    color: #94a3b8;
+    background-color: #f8fafc;
+}
+
+.pin-icon {
+    color: #c2410c;
+    flex-shrink: 0;
+}
+
+/* Title */
+.house-name {
+    margin: 0 0 16px 0;
+    font-family: 'Cinzel', 'Georgia', 'Palatino Linotype', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #1e293b;
+    letter-spacing: -0.01em;
+    word-break: break-word;
+}
+
+/* Coat of Arms / Sigil Box */
+.sigil-section {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-bottom: 18px;
+}
+
+.sigil-header {
+    margin-bottom: 6px;
+}
+
+.sigil-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #92400e;
+}
+
+.sigil-body {
+    flex: 1;
+    background: #fbf9f5;
+    border-left: 3px solid #d4af37;
+    border-radius: 0 8px 8px 0;
+    padding: 10px 14px;
+}
+
+.sigil-text {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: #475569;
+    font-style: italic;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.sigil-text.empty {
+    font-style: normal;
+    color: #94a3b8;
+}
+
+/* Footer */
+.card-footer {
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+.footer-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #e2e8f0 30%, #e2e8f0 70%, transparent);
+    margin-bottom: 8px;
+}
+
+.footer-tag {
+    display: block;
+    text-align: center;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #a1a1aa;
+    font-weight: 500;
+}
