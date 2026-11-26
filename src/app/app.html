@@ -1,9 +1,42 @@
-<h2>รายชื่อตระกูล Game of Thrones</h2>
+<main class="page-container">
+  <header class="app-header">
+    <!-- Majestic Title Crown Icon -->
+    <div class="title-emblem" aria-hidden="true">
+      <svg viewBox="0 0 64 64" width="52" height="52" fill="none">
+        <defs>
+          <linearGradient id="titleGold" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#fffbeb"/>
+            <stop offset="35%" stop-color="#fde047"/>
+            <stop offset="70%" stop-color="#d4af37"/>
+            <stop offset="100%" stop-color="#92400e"/>
+          </linearGradient>
+        </defs>
+        <path d="M14 43 L18 24 L26 33 L32 17 L38 33 L46 24 L50 43 Z" fill="url(#titleGold)" stroke="#78350f" stroke-width="1.2" stroke-linejoin="round"/>
+        <rect x="14" y="43" width="36" height="5" rx="1.5" fill="url(#titleGold)"/>
+        <circle cx="32" cy="17" r="2.8" fill="#fffbeb"/>
+        <circle cx="18" cy="24" r="2.2" fill="#fffbeb"/>
+        <circle cx="50" cy="24" r="2.2" fill="#fffbeb"/>
+      </svg>
+    </div>
 
-<div class="grid-container">
-  @for (item of houses(); track item.url) {
-  <app-housecard [house]="item" />
-  } @empty {
-  <p>กำลังโหลดข้อมูล...</p>
-  }
-</div>
+    <div class="header-badge">THE GREAT HOUSES OF WESTEROS</div>
+    <h1 class="main-title">GAME OF THRONES</h1>
+    <p class="thai-subtitle">รายชื่อตระกูลแห่งมหาศึกชิงบัลลังก์</p>
+    <div class="header-divider">
+      <span class="line"></span>
+      <span class="divider-icon">⚔</span>
+      <span class="line"></span>
+    </div>
+  </header>
+
+  <div class="grid-container">
+    @for (item of houses(); track item.url) {
+      <app-housecard [house]="item" />
+    } @empty {
+      <div class="loading-state">
+        <div class="spinner"></div>
+        <p>กำลังรวบรวมข้อมูลตระกูลแห่ง Westeros...</p>
+      </div>
+    }
+  </div>
+</main>
